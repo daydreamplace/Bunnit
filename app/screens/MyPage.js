@@ -1,12 +1,20 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const MyPage = () => {
   return (
-    <View>
+    <View style={Style.myPageContainer}>
       <Text>MyPage</Text>
     </View>
   );
 };
+
+const Style = StyleSheet.create({
+  myPageContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export default MyPage;
