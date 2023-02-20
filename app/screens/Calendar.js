@@ -1,9 +1,10 @@
 import { StyleSheet, View, Text } from "react-native";
+import MonthlyCalendar from "../components/Calendar/MonthlyCalendar";
 
 const Calendar = () => {
   return (
     <View style={Style.calenderContainer}>
-      <Text>Calendar</Text>
+      <MonthlyCalendar />
     </View>
   );
 };
@@ -11,8 +12,7 @@ const Calendar = () => {
 const Style = StyleSheet.create({
   calenderContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#fff",
   },
 });
 
