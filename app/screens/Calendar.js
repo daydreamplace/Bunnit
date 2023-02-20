@@ -1,20 +1,20 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-const Home = () => {
+const Calendar = () => {
   return (
-    <View style={Style.homeContainer}>
-      <Text>Home</Text>
+    <View style={Style.calenderContainer}>
+      <Text>Calendar</Text>
     </View>
   );
 };
 
 const Style = StyleSheet.create({
-  homeContainer: {
+  calenderContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
 });
 
-export default Home;
+export default Calendar;
