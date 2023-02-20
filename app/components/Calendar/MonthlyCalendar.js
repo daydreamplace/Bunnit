@@ -1,11 +1,36 @@
-import { StyleSheet, View } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 import { Calendar } from "react-native-calendars";
 
 const MonthlyCalender = () => {
+  const [selected, setSelected] = useState("");
+
   return (
-    <View style={Style.calenderContainer}>
-      <Calendar />
-    </View>
+    <Calendar
+      style={Style.calenderContainer}
+      markingType={"custom"}
+      markedDates={{
+        [selected]: {
+          customStyles: {
+            container: {
+              borderWidth: 2,
+              borderColor: "skyblue",
+            },
+            text: {
+              color: "black",
+              fontWeight: "400",
+            },
+          },
+        },
+      }}
+      onDayPress={(day) => {
+        setSelected(day.dateString);
+      }}
+      theme={{
+        selectedDayBackgroundColor: "skyblue",
+        arrowColor: "skyblue",
+      }}
+    />
   );
 };
 
