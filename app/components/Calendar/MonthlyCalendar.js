@@ -35,14 +35,16 @@ const MonthlyCalender = () => {
     },
   };
 
+  const onDayPress = (day) => {
+    setSelected(day.dateString);
+  };
+
   return (
     <Calendar
       style={Style.calenderContainer}
       markingType={"custom"}
       markedDates={selectedDates}
-      onDayPress={(day) => {
-        setSelected(day.dateString);
-      }}
+      onDayPress={onDayPress}
       theme={calendarTheme}
     />
   );
