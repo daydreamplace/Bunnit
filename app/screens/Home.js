@@ -1,4 +1,3 @@
-import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 const Home = () => {
@@ -14,6 +13,7 @@ const Style = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#fff",
   },
 });
 
