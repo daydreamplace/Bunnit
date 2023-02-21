@@ -5,31 +5,45 @@ import { Calendar } from "react-native-calendars";
 const MonthlyCalender = () => {
   const [selected, setSelected] = useState("");
 
+  const selectedDates = {
+    [selected]: {
+      customStyles: {
+        container: {
+          borderWidth: 2,
+          borderColor: "skyblue",
+        },
+        text: {
+          color: "black",
+          fontWeight: "400",
+          textAlign: "center",
+        },
+      },
+    },
+  };
+
+  const calendarTheme = {
+    arrowColor: "skyblue",
+    textMonthFontWeight: "bold",
+    todayTextColor: "skyblue",
+    "stylesheet.calendar.header": {
+      dayTextAtIndex0: {
+        color: "red",
+      },
+      dayTextAtIndex6: {
+        color: "skyblue",
+      },
+    },
+  };
+
   return (
     <Calendar
       style={Style.calenderContainer}
       markingType={"custom"}
-      markedDates={{
-        [selected]: {
-          customStyles: {
-            container: {
-              borderWidth: 2,
-              borderColor: "skyblue",
-            },
-            text: {
-              color: "black",
-              fontWeight: "400",
-            },
-          },
-        },
-      }}
+      markedDates={selectedDates}
       onDayPress={(day) => {
         setSelected(day.dateString);
       }}
-      theme={{
-        selectedDayBackgroundColor: "skyblue",
-        arrowColor: "skyblue",
-      }}
+      theme={calendarTheme}
     />
   );
 };
